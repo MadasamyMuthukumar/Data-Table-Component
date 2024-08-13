@@ -32,6 +32,7 @@ const StatusCell = ({ getValue, row, column, table }) => {
         {/*using our custom statuses */}
         {STATUSES.map((status) => (  
           <MenuItem
+          //new statu should be updated in originl array
             onClick={() => updateData(row.index, column.id, status)}
             key={status.id}
           >

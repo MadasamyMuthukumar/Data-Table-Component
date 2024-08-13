@@ -1,5 +1,6 @@
 import { Input } from "@chakra-ui/react"
 import { useEffect, useState } from "react";
+
 //Component for hadling each editable cells of a column
 export const EditableCell = ({getValue , row, column , table })=>{
     const initialValue = getValue();
