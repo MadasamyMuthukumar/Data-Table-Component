@@ -1,7 +1,7 @@
 const styles = {
   global: {
     "html, body": {
-      backgroundColor: "gray.900",
+      backgroundColor: "#233142",
       color: "whiteAlpha.800",
     },
     svg: {
@@ -16,6 +16,7 @@ const styles = {
     },
     ".th, .td": { boxShadow: "inset 0 0 0 1px #424242" },
     ".th": {
+  //rows should be relative and flex to display horizontally
       position: "relative",
       display: "flex",
       justifyContent: "center",
@@ -27,6 +28,7 @@ const styles = {
       textTransform: "uppercase",
       textAlign: "center",
     },
+    //styling for input fields
     ".td > input": {
       m: "1",
       padding: "0.2rem",
