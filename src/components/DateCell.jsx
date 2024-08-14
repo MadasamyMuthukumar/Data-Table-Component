@@ -4,8 +4,10 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import CalendarIcon from "./icons/CalendarIcon";
 
+//forwarding ref of Datepicker to Center
 const DateCustomInput = forwardRef(({ value, onClick, clearDate }, ref) => (
   <Center ref={ref} onClick={onClick} cursor="pointer">
+    {/* If current date ? return the format : return the icon */}
     {value ? (
       <>
         {value}
@@ -15,7 +17,7 @@ const DateCustomInput = forwardRef(({ value, onClick, clearDate }, ref) => (
           fontSize="md"
           color="red.300"
           onClick={(e) => {
-            e.stopPropagation();
+            e.stopPropagation();  //stoping parent events
             clearDate();
           }}
         >
@@ -27,7 +29,7 @@ const DateCustomInput = forwardRef(({ value, onClick, clearDate }, ref) => (
     )}
   </Center>
 ));
-
+//Component for Date cell
 const DateCell = ({ getValue, row, column, table }) => {
   const date = getValue();  //getting date from data
   const { updateData } = table.options.meta;
@@ -38,7 +40,7 @@ const DateCell = ({ getValue, row, column, table }) => {
       selected={date}
       onChange={(date) => updateData(row.index, column.id, date)}
       customInput={ //custom component for render date
-        <DateCustomInput
+        <DateCustomInput //function to clear date
           clearDate={() => updateData(row.index, column.id, null)}
         />
       }
